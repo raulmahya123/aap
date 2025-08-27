@@ -18,11 +18,9 @@
           extend: {
             colors: {
               aap: {
-                green: "#16a34a", // emerald-600
-                gold: "#d4af37", // classic gold
-                blue: "#2563eb", // blue-600
-                ink: "#0f172a", // slate-900
-                fog: "#f8fafc", // slate-50
+                white: "#FEFEFE", // background/logo dasar
+                red:   "#BA202E", // huruf A kanan & teks Artha Primanusa
+                black: "#1D1C1A", // huruf A kiri & teks Andalan
               },
             },
             fontFamily: {
@@ -34,10 +32,10 @@
                 "monospace",
               ],
             },
-            boxShadow: { glow: "0 0 40px rgba(22,163,74,.25)" },
+            boxShadow: { glow: "0 0 40px rgba(186,32,46,.25)" },
             backgroundImage: {
               heroMesh:
-                "radial-gradient(80% 80% at 120% -10%, rgba(212,175,55,.20) 0%, rgba(255,255,255,0) 60%), radial-gradient(60% 60% at -10% 10%, rgba(37,99,235,.18) 0%, rgba(255,255,255,0) 60%), radial-gradient(40% 40% at 50% 120%, rgba(22,163,74,.18) 0%, rgba(255,255,255,0) 60%)",
+                "radial-gradient(80% 80% at 120% -10%, rgba(186,32,46,.18) 0%, rgba(255,255,255,0) 60%), radial-gradient(60% 60% at -10% 10%, rgba(29,28,26,.10) 0%, rgba(255,255,255,0) 60%)",
             },
           },
         },
@@ -58,62 +56,39 @@
         border: 1px solid rgba(15, 23, 42, 0.06);
       }
       .stroke-text {
-        -webkit-text-stroke: 2px rgba(22, 163, 74, 0.35);
+        -webkit-text-stroke: 2px rgba(186, 32, 46, 0.35);
         color: transparent;
       }
-      .lightbox {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.85);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 70;
-      }
-      .lightbox.show {
-        display: flex;
-      }
+      .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; align-items: center; justify-content: center; z-index: 70; }
+      .lightbox.show { display: flex; }
     </style>
   </head>
-  <body
-    class="bg-white text-aap-ink selection:bg-aap-green/20 selection:text-aap-ink"
-  >
+  <body class="bg-aap-white text-aap-black selection:bg-aap-red/20 selection:text-aap-black">
     <!-- Navbar -->
-    <header
-      class="sticky top-0 inset-x-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200"
-    >
+    <header class="sticky top-0 inset-x-0 z-50 bg-aap-white/70 backdrop-blur border-b border-slate-200">
       <div class="mx-auto max-w-7xl px-4">
         <div class="flex items-center justify-between py-3">
           <a href="#home" class="flex items-center gap-3">
             <div class="flex items-center space-x-3 leading-tight">
               <!-- Foto / Logo -->
-              <img
-                src="foto-aap.jpg"
-                alt="Logo Andalan Artha Primanusa"
-                class="w-10 h-10 rounded-full object-cover"
-              />
-
+              <img src="foto-aap.jpg" alt="Logo Andalan Artha Primanusa" class="w-10 h-10 rounded-full object-cover"/>
               <!-- Teks -->
-              <div>
-                <div class="font-extrabold">Andalan Artha Primanusa</div>
+              <div class="font-extrabold">
+                <span class="text-aap-black">Andalan</span>
+                <span class="text-aap-red">Artha Primanusa</span>
               </div>
             </div>
           </a>
           <nav class="hidden md:flex gap-6 text-sm text-slate-700">
-            <a href="#layanan" class="hover:text-aap-ink">Layanan</a>
-            <a href="#visi-misi" class="hover:text-aap-ink">Visi & Misi</a>
-            <a href="#sejarah" class="hover:text-aap-ink">Sejarah</a>
-            <a href="#galeri" class="hover:text-aap-ink">Galeri</a>
-            <a href="#proyek" class="hover:text-aap-ink">Proyek</a>
-            <a href="#kontak" class="hover:text-aap-ink">Kontak</a>
+            <a href="#layanan" class="hover:text-aap-red">Layanan</a>
+            <a href="#visi-misi" class="hover:text-aap-red">Visi & Misi</a>
+            <a href="#sejarah" class="hover:text-aap-red">Sejarah</a>
+            <a href="#galeri" class="hover:text-aap-red">Galeri</a>
+            <a href="#proyek" class="hover:text-aap-red">Proyek</a>
+            <a href="#kontak" class="hover:text-aap-red">Kontak</a>
           </nav>
           <div class="flex items-center gap-2">
-            <a
-              href="#kontak"
-              class="inline-flex items-center gap-2 bg-gradient-to-r from-aap-green via-aap-gold to-aap-blue hover:opacity-90 text-white font-semibold px-4 py-2 rounded-full shadow-glow"
-            >
-              Konsultasi Gratis
-            </a>
+            <a href="#kontak" class="inline-flex items-center gap-2 bg-aap-red hover:opacity-90 text-white font-semibold px-4 py-2 rounded-full shadow-glow">Konsultasi Gratis</a>
           </div>
         </div>
       </div>
@@ -124,61 +99,37 @@
       <div class="mx-auto max-w-7xl px-4">
         <div class="grid md:grid-cols-12 gap-10 items-center">
           <div class="md:col-span-7">
-            <h1
-              class="text-4xl md:text-6xl font-extrabold leading-tight text-aap-ink"
-            >
-              Kontraktor Tambang
-              <span class="text-aap-green">Generasi Baru</span><br />
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+              Kontraktor Tambang <span class="text-aap-red">Generasi Baru</span><br />
               <span class="stroke-text">Cepat. Aman. Berkelanjutan.</span>
             </h1>
             <p class="mt-5 text-slate-700 max-w-2xl">
-              PT Andalan Artha Primanusa menghadirkan eksekusi proyek tambang
-              nikel hingga batubara berbasis data dan teknologi. Fokus kami:
-              produktivitas, keselamatan, dan kepatuhan lingkungan.
+              PT Andalan Artha Primanusa menghadirkan eksekusi proyek tambang nikel hingga batubara berbasis data dan teknologi. Fokus kami: produktivitas, keselamatan, dan kepatuhan lingkungan.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#layanan"
-                class="px-5 py-3 rounded-xl bg-aap-green text-white font-semibold hover:opacity-90"
-                >Jelajahi Layanan</a
-              >
-              <a
-                href="#visi-misi"
-                class="px-5 py-3 rounded-xl border border-aap-green/30 hover:bg-aap-green/5"
-                >Visi & Misi</a
-              >
+              <a href="#layanan" class="px-5 py-3 rounded-xl bg-aap-red text-white font-semibold hover:opacity-90">Jelajahi Layanan</a>
+              <a href="#visi-misi" class="px-5 py-3 rounded-xl border border-aap-black/30 hover:bg-aap-black/5">Visi & Misi</a>
             </div>
             <div class="mt-10 grid grid-cols-3 gap-4 max-w-lg text-center">
               <div class="rounded-xl border border-slate-200 p-4 bg-white">
-                <div class="text-2xl font-extrabold text-aap-ink">10+</div>
+                <div class="text-2xl font-extrabold">10+</div>
                 <div class="text-xs text-slate-600">Tahun Kolektif Tim</div>
               </div>
               <div class="rounded-xl border border-slate-200 p-4 bg-white">
-                <div class="text-2xl font-extrabold text-aap-ink">5M+</div>
+                <div class="text-2xl font-extrabold">5M+</div>
                 <div class="text-xs text-slate-600">BCM Overburden</div>
               </div>
               <div class="rounded-xl border border-slate-200 p-4 bg-white">
-                <div class="text-2xl font-extrabold text-aap-ink">99.8%</div>
-                <div class="text-xs text-slate-600">
-                  Rata-rata Up-Time Fleet
-                </div>
+                <div class="text-2xl font-extrabold">99.8%</div>
+                <div class="text-xs text-slate-600">Rata-rata Up-Time Fleet</div>
               </div>
             </div>
           </div>
           <div class="md:col-span-5">
             <div class="relative">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-aap-green via-aap-gold to-aap-blue rounded-3xl blur opacity-50"
-              ></div>
-              <div
-                class="relative rounded-3xl overflow-hidden border border-slate-200 bg-white"
-              >
-                <img
-                  src="foto-tambang1.jpg"
-                  alt="Mining operations"
-                  class="aspect-[4/3] object-cover"
-                />
-                
+              <div class="absolute -inset-1 bg-aap-red rounded-3xl blur opacity-30"></div>
+              <div class="relative rounded-3xl overflow-hidden border border-slate-200 bg-white">
+                <img src="foto-tambang1.jpg" alt="Mining operations" class="aspect-[4/3] object-cover"/>
               </div>
             </div>
           </div>
@@ -187,79 +138,41 @@
     </section>
 
     <!-- Layanan -->
-    <section id="layanan" class="py-20 bg-aap-fog">
+    <section id="layanan" class="py-20 bg-slate-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="flex items-end justify-between gap-6">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Layanan Utama
-            </h2>
-            <p class="text-slate-700 mt-2 max-w-2xl">
-              End-to-end mining contractor untuk komoditas nikel & batubara —
-              dari perencanaan hingga pengiriman.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Layanan Utama</h2>
+            <p class="text-slate-700 mt-2 max-w-2xl">End-to-end mining contractor untuk komoditas nikel & batubara — dari perencanaan hingga pengiriman.</p>
           </div>
-          <a
-            href="#kontak"
-            class="hidden md:inline-flex items-center gap-2 text-sm border border-slate-300 hover:bg-white rounded-xl px-4 py-2"
-            >Butuh penawaran? →</a
-          >
+          <a href="#kontak" class="hidden md:inline-flex items-center gap-2 text-sm border border-slate-300 hover:bg-white rounded-xl px-4 py-2">Butuh penawaran? →</a>
         </div>
 
         <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <div
-            class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition"
-          >
-            <div
-              class="h-10 w-10 rounded-lg bg-aap-green/15 grid place-items-center mb-4"
-            >
-              ⛏️
-            </div>
-            <h3 class="font-bold text-xl text-aap-ink">Mining & Overburden</h3>
-            <p class="text-sm text-slate-700 mt-2">
-              Pembukaan lahan, ripping, drilling & blasting, loading-hauling,
-              sampai disposal dengan KPI ketat.
-            </p>
+          <div class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition">
+            <div class="h-10 w-10 rounded-lg bg-aap-red/10 grid place-items-center mb-4">⛏️</div>
+            <h3 class="font-bold text-xl">Mining & Overburden</h3>
+            <p class="text-sm text-slate-700 mt-2">Pembukaan lahan, ripping, drilling & blasting, loading-hauling, sampai disposal dengan KPI ketat.</p>
             <ul class="mt-4 space-y-2 text-sm text-slate-700">
               <li>• Fleet management & dispatching</li>
               <li>• Fuel & cycle time optimization</li>
               <li>• Safety-first SOP (Zero LTI)</li>
             </ul>
           </div>
-          <div
-            class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition"
-          >
-            <div
-              class="h-10 w-10 rounded-lg bg-aap-blue/15 grid place-items-center mb-4"
-            >
-              🪙
-            </div>
-            <h3 class="font-bold text-xl text-aap-ink">Nikel Operations</h3>
-            <p class="text-sm text-slate-700 mt-2">
-              Selective mining & ore blending untuk menjaga kadar Ni dan kadar
-              air sesuai spesifikasi smelter.
-            </p>
+          <div class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition">
+            <div class="h-10 w-10 rounded-lg bg-aap-red/10 grid place-items-center mb-4">🪙</div>
+            <h3 class="font-bold text-xl">Nikel Operations</h3>
+            <p class="text-sm text-slate-700 mt-2">Selective mining & ore blending untuk menjaga kadar Ni dan kadar air sesuai spesifikasi smelter.</p>
             <ul class="mt-4 space-y-2 text-sm text-slate-700">
               <li>• Ore control & grade monitoring</li>
               <li>• Stockpile & ROM management</li>
               <li>• QA/QC & chain of custody</li>
             </ul>
           </div>
-          <div
-            class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition"
-          >
-            <div
-              class="h-10 w-10 rounded-lg bg-aap-gold/15 grid place-items-center mb-4"
-            >
-              📐
-            </div>
-            <h3 class="font-bold text-xl text-aap-ink">
-              Mine Plan & Engineering
-            </h3>
-            <p class="text-sm text-slate-700 mt-2">
-              Perencanaan jangka pendek–panjang, desain pit, jalan tambang, &
-              water management.
-            </p>
+          <div class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition">
+            <div class="h-10 w-10 rounded-lg bg-aap-red/10 grid place-items-center mb-4">📐</div>
+            <h3 class="font-bold text-xl">Mine Plan & Engineering</h3>
+            <p class="text-sm text-slate-700 mt-2">Perencanaan jangka pendek–panjang, desain pit, jalan tambang, & water management.</p>
             <ul class="mt-4 space-y-2 text-sm text-slate-700">
               <li>• Survey & drone mapping</li>
               <li>• Short/long-term scheduling</li>
@@ -269,59 +182,30 @@
         </div>
 
         <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <div
-            class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition"
-          >
-            <div
-              class="h-10 w-10 rounded-lg bg-aap-gold/15 grid place-items-center mb-4"
-            >
-              🦺
-            </div>
-            <h3 class="font-bold text-xl text-aap-ink">
-              Safety, Compliance & ESG
-            </h3>
-            <p class="text-sm text-slate-700 mt-2">
-              SMKP, K3LH, reklamasi & revegetasi, serta pelaporan digital sesuai
-              regulasi.
-            </p>
+          <div class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition">
+            <div class="h-10 w-10 rounded-lg bg-aap-red/10 grid place-items-center mb-4">🦺</div>
+            <h3 class="font-bold text-xl">Safety, Compliance & ESG</h3>
+            <p class="text-sm text-slate-700 mt-2">SMKP, K3LH, reklamasi & revegetasi, serta pelaporan digital sesuai regulasi.</p>
             <ul class="mt-4 space-y-2 text-sm text-slate-700">
               <li>• Permit & compliance assistance</li>
               <li>• Environmental monitoring</li>
               <li>• Community development</li>
             </ul>
           </div>
-          <div
-            class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition"
-          >
-            <div
-              class="h-10 w-10 rounded-lg bg-aap-blue/15 grid place-items-center mb-4"
-            >
-              🛰️
-            </div>
-            <h3 class="font-bold text-xl text-aap-ink">Data & Technology</h3>
-            <p class="text-sm text-slate-700 mt-2">
-              Telematics, IoT, dan dashboard real-time untuk keputusan cepat &
-              akurat.
-            </p>
+          <div class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition">
+            <div class="h-10 w-10 rounded-lg bg-aap-red/10 grid place-items-center mb-4">🛰️</div>
+            <h3 class="font-bold text-xl">Data & Technology</h3>
+            <p class="text-sm text-slate-700 mt-2">Telematics, IoT, dan dashboard real-time untuk keputusan cepat & akurat.</p>
             <ul class="mt-4 space-y-2 text-sm text-slate-700">
               <li>• Fleet telematics & fuel sensor</li>
               <li>• Production dashboard</li>
               <li>• Preventive maintenance</li>
             </ul>
           </div>
-          <div
-            class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition"
-          >
-            <div
-              class="h-10 w-10 rounded-lg bg-aap-green/15 grid place-items-center mb-4"
-            >
-              🤝
-            </div>
-            <h3 class="font-bold text-xl text-aap-ink">Logistics & Hauling</h3>
-            <p class="text-sm text-slate-700 mt-2">
-              Pengangkutan dari pit ke ROM/port dengan kontrol antrian &
-              ketersediaan armada.
-            </p>
+          <div class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition">
+            <div class="h-10 w-10 rounded-lg bg-aap-red/10 grid place-items-center mb-4">🤝</div>
+            <h3 class="font-bold text-xl">Logistics & Hauling</h3>
+            <p class="text-sm text-slate-700 mt-2">Pengangkutan dari pit ke ROM/port dengan kontrol antrian & ketersediaan armada.</p>
             <ul class="mt-4 space-y-2 text-sm text-slate-700">
               <li>• Route optimization</li>
               <li>• Queue & dispatch control</li>
@@ -337,78 +221,26 @@
       <div class="mx-auto max-w-7xl px-4">
         <div class="grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Visi
-            </h2>
-            <p class="mt-3 text-slate-700">
-              Menjadi kontraktor tambang andalan yang mendorong
-              <span class="text-aap-green font-semibold"
-                >produktivitas tinggi</span
-              >,
-              <span class="text-aap-green font-semibold">keselamatan prima</span
-              >, dan
-              <span class="text-aap-green font-semibold"
-                >pertambangan berkelanjutan</span
-              >
-              di Indonesia.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Visi</h2>
+            <p class="mt-3 text-slate-700">Menjadi kontraktor tambang andalan yang mendorong <span class="text-aap-red font-semibold">produktivitas tinggi</span>, <span class="text-aap-red font-semibold">keselamatan prima</span>, dan <span class="text-aap-red font-semibold">pertambangan berkelanjutan</span> di Indonesia.</p>
             <div class="mt-6 rounded-2xl border border-slate-200 p-6 bg-white">
-              <div class="font-semibold mb-2 text-aap-ink">
-                Nilai Inti (CORE)
-              </div>
+              <div class="font-semibold mb-2">Nilai Inti (CORE)</div>
               <ul class="space-y-2 text-slate-700 text-sm">
                 <li>• <b>C</b>ommitment: Disiplin pada KPI & SLA.</li>
                 <li>• <b>O</b>wnership: Tuntas & bertanggung jawab.</li>
-                <li>
-                  • <b>R</b>esilience: Adaptif hadapi cuaca & tantangan
-                  lapangan.
-                </li>
-                <li>
-                  • <b>E</b>xcellence: Continuous improvement & data-driven.
-                </li>
+                <li>• <b>R</b>esilience: Adaptif hadapi cuaca & tantangan lapangan.</li>
+                <li>• <b>E</b>xcellence: Continuous improvement & data-driven.</li>
               </ul>
             </div>
           </div>
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Misi
-            </h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Misi</h2>
             <ul class="mt-4 space-y-3 text-slate-700">
-              <li class="flex gap-3">
-                <span class="mt-1">✅</span
-                ><span
-                  >Mengoperasikan armada dan SDM dengan standar <b>SMKP</b> &
-                  <b>K3LH</b> untuk mencapai <b>Zero LTI</b>.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1">✅</span
-                ><span
-                  >Memanfaatkan <b>telematics</b>, <b>IoT</b>, dan
-                  <b>dashboard real-time</b> dalam pengambilan keputusan.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1">✅</span
-                ><span
-                  >Menjaga <b>kualitas ore</b> melalui ore control & blending
-                  untuk memenuhi spesifikasi smelter.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1">✅</span
-                ><span
-                  >Membangun kemitraan jangka panjang dengan
-                  <b>transparansi KPI</b> & pelaporan berkala.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1">✅</span
-                ><span
-                  >Mengutamakan keberlanjutan melalui <b>rehabilitasi</b>,
-                  <b>reklamasi</b>, dan <b>pengembangan masyarakat</b>.</span
-                >
-              </li>
+              <li class="flex gap-3"><span class="mt-1">✅</span><span>Mengoperasikan armada dan SDM dengan standar <b>SMKP</b> & <b>K3LH</b> untuk mencapai <b>Zero LTI</b>.</span></li>
+              <li class="flex gap-3"><span class="mt-1">✅</span><span>Memanfaatkan <b>telematics</b>, <b>IoT</b>, dan <b>dashboard real-time</b> dalam pengambilan keputusan.</span></li>
+              <li class="flex gap-3"><span class="mt-1">✅</span><span>Menjaga <b>kualitas ore</b> melalui ore control & blending untuk memenuhi spesifikasi smelter.</span></li>
+              <li class="flex gap-3"><span class="mt-1">✅</span><span>Membangun kemitraan jangka panjang dengan <b>transparansi KPI</b> & pelaporan berkala.</span></li>
+              <li class="flex gap-3"><span class="mt-1">✅</span><span>Mengutamakan keberlanjutan melalui <b>rehabilitasi</b>, <b>reklamasi</b>, dan <b>pengembangan masyarakat</b>.</span></li>
             </ul>
           </div>
         </div>
@@ -416,127 +248,68 @@
     </section>
 
     <!-- Sejarah (Timeline) -->
-    <section id="sejarah" class="py-20 bg-aap-fog">
+    <section id="sejarah" class="py-20 bg-slate-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="flex items-end justify-between">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Sejarah Perusahaan
-            </h2>
-            <p class="text-slate-700 mt-2">
-              Perjalanan kami membangun kapabilitas pertambangan yang andal.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Sejarah Perusahaan</h2>
+            <p class="text-slate-700 mt-2">Perjalanan kami membangun kapabilitas pertambangan yang andal.</p>
           </div>
           <div class="flex gap-2">
-            <button
-              class="tl-prev px-3 py-2 rounded-lg border border-slate-300"
-            >
-              ◀
-            </button>
-            <button
-              class="tl-next px-3 py-2 rounded-lg border border-slate-300"
-            >
-              ▶
-            </button>
+            <button class="tl-prev px-3 py-2 rounded-lg border border-slate-300">◀</button>
+            <button class="tl-next px-3 py-2 rounded-lg border border-slate-300">▶</button>
           </div>
         </div>
 
-        <div
-          class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white"
-        >
+        <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div id="timeline" class="flex transition-transform duration-500">
             <div class="min-w-full grid md:grid-cols-2">
               <div class="p-8">
-                <div class="text-aap-green font-mono">2018</div>
-                <h3 class="text-2xl font-bold mt-1 text-aap-ink">
-                  Founding & Pilot Project
-                </h3>
-                <p class="mt-3 text-slate-700">
-                  Didirikan dengan fokus pada jasa overburden & hauling.
-                  Menyelesaikan proyek pilot dengan 120% pencapaian target
-                  produksi.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <div class="text-aap-red font-mono">2018</div>
+                <h3 class="text-2xl font-bold mt-1">Founding & Pilot Project</h3>
+                <p class="mt-3 text-slate-700">Didirikan dengan fokus pada jasa overburden & hauling. Menyelesaikan proyek pilot dengan 120% pencapaian target produksi.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>Kontrak OB skala menengah</li>
                   <li>Fleet awal: excavator 50T & dump truck 20–30T</li>
                 </ul>
               </div>
-              <img
-                src="foto-tambang2.jpg"
-                class="h-full object-cover"
-                alt="Founding project"
-              />
+              <img src="foto-tambang2.jpg" class="h-full object-cover" alt="Founding project"/>
             </div>
             <div class="min-w-full grid md:grid-cols-2">
               <div class="p-8">
-                <div class="text-aap-green font-mono">2020</div>
-                <h3 class="text-2xl font-bold mt-1 text-aap-ink">
-                  Ekspansi ke Nikel
-                </h3>
-                <p class="mt-3 text-slate-700">
-                  Memulai selective mining nikel & ore blending di Sulawesi.
-                  Implementasi ore control & QA/QC.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <div class="text-aap-red font-mono">2020</div>
+                <h3 class="text-2xl font-bold mt-1">Ekspansi ke Nikel</h3>
+                <p class="mt-3 text-slate-700">Memulai selective mining nikel & ore blending di Sulawesi. Implementasi ore control & QA/QC.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>Stockpile & ROM management</li>
                   <li>Grade variability turun 20%+</li>
                 </ul>
               </div>
-              <img
-                src="foto5.png"
-                class="h-full object-cover"
-                alt="Nickel operations"
-              />
+              <img src="foto5.png" class="h-full object-cover" alt="Nickel operations"/>
             </div>
             <div class="min-w-full grid md:grid-cols-2">
               <div class="p-8">
-                <div class="text-aap-green font-mono">2022</div>
-                <h3 class="text-2xl font-bold mt-1 text-aap-ink">
-                  Digital & Telematics
-                </h3>
-                <p class="mt-3 text-slate-700">
-                  Adopsi telematics, sensor fuel, dan dashboard produksi
-                  real-time untuk pengambilan keputusan cepat.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <div class="text-aap-red font-mono">2022</div>
+                <h3 class="text-2xl font-bold mt-1">Digital & Telematics</h3>
+                <p class="mt-3 text-slate-700">Adopsi telematics, sensor fuel, dan dashboard produksi real-time untuk pengambilan keputusan cepat.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>Cycle time monitoring</li>
                   <li>Preventive maintenance & uptime >99%</li>
                 </ul>
               </div>
-              <img
-                src="foto4.png"
-                class="h-full object-cover"
-                alt="Telematics"
-              />
+              <img src="foto4.png" class="h-full object-cover" alt="Telematics"/>
             </div>
             <div class="min-w-full grid md:grid-cols-2">
               <div class="p-8">
-                <div class="text-aap-green font-mono">2024–2025</div>
-                <h3 class="text-2xl font-bold mt-1 text-aap-ink">
-                  ESG & Community
-                </h3>
-                <p class="mt-3 text-slate-700">
-                  Memperkuat program reklamasi, revegetasi, dan pengembangan
-                  masyarakat di sekitar area operasi.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <div class="text-aap-red font-mono">2024–2025</div>
+                <h3 class="text-2xl font-bold mt-1">ESG & Community</h3>
+                <p class="mt-3 text-slate-700">Memperkuat program reklamasi, revegetasi, dan pengembangan masyarakat di sekitar area operasi.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>Rehabilitasi lahan & monitoring kualitas air</li>
                   <li>Program pelatihan & peluang kerja lokal</li>
                 </ul>
               </div>
-              <img
-                src="foto3.png"
-                class="h-full object-cover"
-                alt="ESG & Community"
-              />
+              <img src="foto3.png" class="h-full object-cover" alt="ESG & Community"/>
             </div>
           </div>
         </div>
@@ -548,185 +321,50 @@
       <div class="mx-auto max-w-7xl px-4">
         <div class="flex items-end justify-between gap-6">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Foto Kegiatan
-            </h2>
-            <p class="text-slate-700 mt-2">
-              Dokumentasi aktivitas lapangan: mining, hauling, maintenance, dan
-              community program.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Foto Kegiatan</h2>
+            <p class="text-slate-700 mt-2">Dokumentasi aktivitas lapangan: mining, hauling, maintenance, dan community program.</p>
           </div>
           <div class="hidden md:flex gap-2 text-sm">
-            <button
-              data-filter="all"
-              class="gal-btn px-3 py-2 rounded-lg border border-slate-300"
-            >
-              Semua
-            </button>
-            <button
-              data-filter="mining"
-              class="gal-btn px-3 py-2 rounded-lg border border-slate-300"
-            >
-              Mining
-            </button>
-            <button
-              data-filter="hauling"
-              class="gal-btn px-3 py-2 rounded-lg border border-slate-300"
-            >
-              Hauling
-            </button>
-            <button
-              data-filter="maintenance"
-              class="gal-btn px-3 py-2 rounded-lg border border-slate-300"
-            >
-              Maintenance
-            </button>
-            <button
-              data-filter="community"
-              class="gal-btn px-3 py-2 rounded-lg border border-slate-300"
-            >
-              Community
-            </button>
+            <button data-filter="all" class="gal-btn px-3 py-2 rounded-lg border border-slate-300">Semua</button>
+            <button data-filter="mining" class="gal-btn px-3 py-2 rounded-lg border border-slate-300">Mining</button>
+            <button data-filter="hauling" class="gal-btn px-3 py-2 rounded-lg border border-slate-300">Hauling</button>
+            <button data-filter="maintenance" class="gal-btn px-3 py-2 rounded-lg border border-slate-300">Maintenance</button>
+            <button data-filter="community" class="gal-btn px-3 py-2 rounded-lg border border-slate-300">Community</button>
           </div>
         </div>
 
         <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="gallery">
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="mining"
-          >
-            <img
-              src="foto1.png"
-              alt="Excavator loading ore"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Excavator loading ore — pit nickel
-            </figcaption>
+          <figure class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in" data-cat="mining">
+            <img src="foto1.png" alt="Excavator loading ore" class="h-56 w-full object-cover group-hover:scale-105 transition"/>
+            <figcaption class="p-3 text-sm text-slate-700">Excavator loading ore — pit nickel</figcaption>
           </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="mining"
-          >
-            <img
-              src="foto2.png"
-              alt="Drilling & blasting"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Drilling & Blasting preparation
-            </figcaption>
+          <figure class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in" data-cat="mining">
+            <img src="foto2.png" alt="Drilling & blasting" class="h-56 w-full object-cover group-hover:scale-105 transition"/>
+            <figcaption class="p-3 text-sm text-slate-700">Drilling & Blasting preparation</figcaption>
           </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="hauling"
-          >
-            <img
-              src="foto3.png"
-              alt="Hauling trucks"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Hauling — route optimization
-            </figcaption>
+          <figure class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in" data-cat="hauling">
+            <img src="foto3.png" alt="Hauling trucks" class="h-56 w-full object-cover group-hover:scale-105 transition"/>
+            <figcaption class="p-3 text-sm text-slate-700">Hauling — route optimization</figcaption>
           </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="hauling"
-          >
-            <img
-              src="foto4.png"
-              alt="Port & logistics"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Port logistics & stockpile
-            </figcaption>
+          <figure class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in" data-cat="hauling">
+            <img src="foto4.png" alt="Port & logistics" class="h-56 w-full object-cover group-hover:scale-105 transition"/>
+            <figcaption class="p-3 text-sm text-slate-700">Port logistics & stockpile</figcaption>
           </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="maintenance"
-          >
-            <img
-              src="foto5.png"
-              alt="Workshop maintenance"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Workshop — preventive maintenance
-            </figcaption>
+          <figure class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in" data-cat="maintenance">
+            <img src="foto5.png" alt="Workshop maintenance" class="h-56 w-full object-cover group-hover:scale-105 transition"/>
+            <figcaption class="p-3 text-sm text-slate-700">Workshop — preventive maintenance</figcaption>
           </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="maintenance"
-          >
-            <img
-              src="foto6.png"
-              alt="Spare part & inspection"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Spare part & inspection
-            </figcaption>
+          <figure class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in" data-cat="maintenance">
+            <img src="foto6.png" alt="Spare part & inspection" class="h-56 w-full object-cover group-hover:scale-105 transition"/>
+            <figcaption class="p-3 text-sm text-slate-700">Spare part & inspection</figcaption>
           </figure>
-          <!-- <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="community"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1492175742197-ed20dc5a6bed?q=80&w=1400&auto=format&fit=crop"
-              alt="Community engagement"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Community engagement program
-            </figcaption>
-          </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="community"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1529336953121-c9e3df335f6b?q=80&w=1400&auto=format&fit=crop"
-              alt="Training & upskilling"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Pelatihan & upskilling lokal
-            </figcaption>
-          </figure>
-          <figure
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white cursor-zoom-in"
-            data-cat="mining"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1400&auto=format&fit=crop"
-              alt="Dozer & grader"
-              class="h-56 w-full object-cover group-hover:scale-105 transition"
-            />
-            <figcaption class="p-3 text-sm text-slate-700">
-              Dozer & grader — road maintenance
-            </figcaption>
-          </figure> -->
         </div>
 
         <div id="lightbox" class="lightbox">
           <div class="max-w-5xl w-full px-4">
-            <div
-              class="relative rounded-2xl overflow-hidden border border-slate-200 bg-black"
-            >
-              <button
-                id="lbClose"
-                class="absolute top-3 right-3 z-10 px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white"
-              >
-                ✕
-              </button>
-              <img
-                id="lbImg"
-                src=""
-                alt="Preview"
-                class="w-full max-h-[80vh] object-contain"
-              />
+            <div class="relative rounded-2xl overflow-hidden border border-slate-200 bg-black">
+              <button id="lbClose" class="absolute top-3 right-3 z-10 px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white">✕</button>
+              <img id="lbImg" src="" alt="Preview" class="w-full max-h-[80vh] object-contain"/>
               <div id="lbCap" class="p-3 text-sm text-white/80"></div>
             </div>
           </div>
@@ -735,54 +373,28 @@
     </section>
 
     <!-- Proyek -->
-    <section id="proyek" class="py-20 bg-aap-fog">
+    <section id="proyek" class="py-20 bg-slate-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="flex items-end justify-between">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Cuplikan Proyek
-            </h2>
-            <p class="text-slate-700 mt-2">
-              Beberapa kerja lapangan yang mencerminkan standar operasional
-              kami.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Cuplikan Proyek</h2>
+            <p class="text-slate-700 mt-2">Beberapa kerja lapangan yang mencerminkan standar operasional kami.</p>
           </div>
           <div class="flex gap-2">
-            <button
-              class="proj-prev px-3 py-2 rounded-lg border border-slate-300"
-            >
-              ◀
-            </button>
-            <button
-              class="proj-next px-3 py-2 rounded-lg border border-slate-300"
-            >
-              ▶
-            </button>
+            <button class="proj-prev px-3 py-2 rounded-lg border border-slate-300">◀</button>
+            <button class="proj-next px-3 py-2 rounded-lg border border-slate-300">▶</button>
           </div>
         </div>
 
-        <div
-          class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white"
-        >
+        <div class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div id="carousel" class="flex transition-transform duration-500">
             <div class="min-w-full grid md:grid-cols-2">
-              <img
-                src="foto-tambang2.jpg"
-                class="h-full object-cover"
-                alt="Nickel pit operations"
-              />
+              <img src="foto-tambang2.jpg" class="h-full object-cover" alt="Nickel pit operations"/>
               <div class="p-8">
                 <div class="text-sm text-slate-500">Sulawesi Tenggara</div>
-                <h3 class="text-2xl font-bold mt-2 text-aap-ink">
-                  Selective Mining Nikel
-                </h3>
-                <p class="text-slate-700 mt-3">
-                  Optimasi kadar dengan ore control & blending plan, mengurangi
-                  variability kadar Ni sebesar 22%.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <h3 class="text-2xl font-bold mt-2">Selective Mining Nikel</h3>
+                <p class="text-slate-700 mt-3">Optimasi kadar dengan ore control & blending plan, mengurangi variability kadar Ni sebesar 22%.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>Increase recovery 12%</li>
                   <li>Downtime −15%</li>
                   <li>Hauling throughput +18%</li>
@@ -790,23 +402,12 @@
               </div>
             </div>
             <div class="min-w-full grid md:grid-cols-2">
-              <img
-                src="foto1.png"
-                class="h-full object-cover"
-                alt="Overburden removal"
-              />
+              <img src="foto1.png" class="h-full object-cover" alt="Overburden removal"/>
               <div class="p-8">
                 <div class="text-sm text-slate-500">Kalimantan Timur</div>
-                <h3 class="text-2xl font-bold mt-2 text-aap-ink">
-                  Overburden Removal
-                </h3>
-                <p class="text-slate-700 mt-3">
-                  Cycle time tuning & dispatching system menambah produktivitas
-                  tanpa menambah fleet.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <h3 class="text-2xl font-bold mt-2">Overburden Removal</h3>
+                <p class="text-slate-700 mt-3">Cycle time tuning & dispatching system menambah produktivitas tanpa menambah fleet.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>5.2M BCM / tahun</li>
                   <li>Fuel burn −9%</li>
                   <li>Zero LTI 18 bulan</li>
@@ -814,23 +415,12 @@
               </div>
             </div>
             <div class="min-w-full grid md:grid-cols-2">
-              <img
-                src="foto6.png"
-                class="h-full object-cover"
-                alt="Hauling and logistics"
-              />
+              <img src="foto6.png" class="h-full object-cover" alt="Hauling and logistics"/>
               <div class="p-8">
                 <div class="text-sm text-slate-500">Sulawesi Tengah</div>
-                <h3 class="text-2xl font-bold mt-2 text-aap-ink">
-                  Hauling & Logistics
-                </h3>
-                <p class="text-slate-700 mt-3">
-                  Manajemen antrian dan rute mengurangi waktu tunggu rata-rata
-                  24 menit per ritase.
-                </p>
-                <ul
-                  class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside"
-                >
+                <h3 class="text-2xl font-bold mt-2">Hauling & Logistics</h3>
+                <p class="text-slate-700 mt-3">Manajemen antrian dan rute mengurangi waktu tunggu rata-rata 24 menit per ritase.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc list-inside">
                   <li>Queue time −30%</li>
                   <li>On-time delivery 98.6%</li>
                   <li>Demurrage minimization</li>
@@ -845,25 +435,14 @@
     <!-- CTA -->
     <section class="py-20">
       <div class="mx-auto max-w-7xl px-4">
-        <div
-          class="rounded-3xl p-10 md:p-14 bg-gradient-to-br from-aap-green via-aap-gold to-aap-blue text-white shadow-glow"
-        >
+        <div class="rounded-3xl p-10 md:p-14 bg-gradient-to-br from-aap-red via-aap-red/90 to-aap-black text-white shadow-glow">
           <div class="grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2">
-              <h3 class="text-2xl md:text-3xl font-extrabold">
-                Siap tingkatkan produktivitas tambang Anda?
-              </h3>
-              <p class="mt-2 text-white/90">
-                Tim kami akan menganalisis kebutuhan dan memberikan proposal
-                dalam 3–5 hari kerja.
-              </p>
+              <h3 class="text-2xl md:text-3xl font-extrabold">Siap tingkatkan produktivitas tambang Anda?</h3>
+              <p class="mt-2 text-white/90">Tim kami akan menganalisis kebutuhan dan memberikan proposal dalam 3–5 hari kerja.</p>
             </div>
             <div class="text-right">
-              <a
-                href="#kontak"
-                class="inline-flex items-center gap-2 bg-white text-aap-ink px-6 py-3 rounded-xl hover:bg-white/90"
-                >Hubungi Kami</a
-              >
+              <a href="#kontak" class="inline-flex items-center gap-2 bg-white text-aap-black px-6 py-3 rounded-xl hover:bg-white/90">Hubungi Kami</a>
             </div>
           </div>
         </div>
@@ -871,135 +450,75 @@
     </section>
 
     <!-- Kontak -->
-    <section id="kontak" class="py-20 bg-aap-fog">
+    <section id="kontak" class="py-20 bg-slate-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="grid md:grid-cols-2 gap-10">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-aap-ink">
-              Kontak
-            </h2>
-            <p class="text-slate-700 mt-2">
-              Mari diskusikan kebutuhan proyek Anda. Kami responsif dan
-              transparan.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Kontak</h2>
+            <p class="text-slate-700 mt-2">Mari diskusikan kebutuhan proyek Anda. Kami responsif dan transparan.</p>
 
             <div class="mt-6 space-y-4 text-slate-700">
               <div class="flex gap-3 items-start">
-                <div
-                  class="h-9 w-9 rounded-lg bg-aap-green/10 grid place-items-center"
-                >
-                  📍
-                </div>
+                <div class="h-9 w-9 rounded-lg bg-aap-red/10 grid place-items-center">📍</div>
                 <div>
-                  <div class="font-semibold text-aap-ink">Kantor</div>
-                  <div class="text-sm">
-                    Jl. Taman Bukit Kenangan Blok J2 No.14 Kav. No.2, Pluit, Penjaringan, Jakarta 14440
-                  </div>
+                  <div class="font-semibold">Kantor</div>
+                  <div class="text-sm">Jl. Taman Bukit Kenangan Blok J2 No.14 Kav. No.2, Pluit, Penjaringan, Jakarta 14440</div>
                 </div>
               </div>
               <div class="flex gap-3 items-start">
-                <div
-                  class="h-9 w-9 rounded-lg bg-aap-blue/10 grid place-items-center"
-                >
-                  ✉️
-                </div>
+                <div class="h-9 w-9 rounded-lg bg-aap-red/10 grid place-items-center">✉️</div>
                 <div>
-                  <div class="font-semibold text-aap-ink">Email</div>
+                  <div class="font-semibold">Email</div>
                   <div class="text-sm">hello@andalan-artha.co.id</div>
                 </div>
               </div>
               <div class="flex gap-3 items-start">
-                <div
-                  class="h-9 w-9 rounded-lg bg-aap-gold/10 grid place-items-center"
-                >
-                  📞
-                </div>
+                <div class="h-9 w-9 rounded-lg bg-aap-red/10 grid place-items-center">📞</div>
                 <div>
-                  <div class="font-semibold text-aap-ink">Telepon</div>
+                  <div class="font-semibold">Telepon</div>
                   <div class="text-sm">+62 811-101-056-22</div>
                 </div>
               </div>
               <div class="flex gap-3 items-start">
-                <div
-                  class="h-9 w-9 rounded-lg bg-aap-green/10 grid place-items-center"
-                >
-                  💬
-                </div>
+                <div class="h-9 w-9 rounded-lg bg-aap-red/10 grid place-items-center">💬</div>
                 <div>
-                  <div class="font-semibold text-aap-ink">WhatsApp</div>
-                  <div class="text-sm">
-                    <a class="underline" href="https://wa.me/6281110105622?text=Halo%20AAP,%20saya%20butuh%20informasi%20lebih%20lanjut." target="_blank" rel="noopener">
-  Chat WhatsApp
-</a>
-
-                  </div>
+                  <div class="font-semibold">WhatsApp</div>
+                  <div class="text-sm"><a class="underline" href="https://wa.me/6281110105622?text=Halo%20AAP,%20saya%20butuh%20informasi%20lebih%20lanjut." target="_blank" rel="noopener">Chat WhatsApp</a></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <form
-            class="space-y-4"
-            onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan menghubungi Anda segera.'); this.reset();"
-          >
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan menghubungi Anda segera.'); this.reset();">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label class="text-sm text-slate-600">Nama</label>
-                <input
-                  required
-                  type="text"
-                  class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-green"
-                  placeholder="Nama Anda"
-                />
+                <input required type="text" class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-red" placeholder="Nama Anda"/>
               </div>
               <div>
                 <label class="text-sm text-slate-600">Perusahaan</label>
-                <input
-                  type="text"
-                  class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-green"
-                  placeholder="PT ..."
-                />
+                <input type="text" class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-red" placeholder="PT ..."/>
               </div>
             </div>
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label class="text-sm text-slate-600">Email</label>
-                <input
-                  required
-                  type="email"
-                  class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-green"
-                  placeholder="nama@perusahaan.com"
-                />
+                <input required type="email" class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-red" placeholder="nama@perusahaan.com"/>
               </div>
               <div>
                 <label class="text-sm text-slate-600">Telepon</label>
-                <input
-                  type="tel"
-                  class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-green"
-                  placeholder="08xx"
-                />
+                <input type="tel" class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-red" placeholder="08xx"/>
               </div>
             </div>
             <div>
               <label class="text-sm text-slate-600">Deskripsi Kebutuhan</label>
-              <textarea
-                required
-                class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-green"
-                rows="5"
-                placeholder="Jelaskan lokasi, target produksi, scope kerja, dll."
-              ></textarea>
+              <textarea required class="mt-1 w-full rounded-xl bg-white border border-slate-300 px-4 py-3 outline-none focus:border-aap-red" rows="5" placeholder="Jelaskan lokasi, target produksi, scope kerja, dll."></textarea>
             </div>
             <div class="flex items-center gap-3">
-              <input id="nda" type="checkbox" class="accent-aap-green" />
-              <label for="nda" class="text-sm text-slate-600"
-                >Butuh NDA sebelum berbagi data</label
-              >
+              <input id="nda" type="checkbox" class="accent-aap-red"/>
+              <label for="nda" class="text-sm text-slate-600">Butuh NDA sebelum berbagi data</label>
             </div>
-            <button
-              class="w-full md:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-aap-green via-aap-gold to-aap-blue text-white font-semibold shadow-glow"
-            >
-              Kirim
-            </button>
+            <button class="w-full md:w-auto px-6 py-3 rounded-xl bg-aap-red text-white font-semibold shadow-glow">Kirim</button>
           </form>
         </div>
       </div>
@@ -1011,61 +530,39 @@
         <div class="grid md:grid-cols-3 gap-8 items-start">
           <div>
             <div class="flex items-center gap-3">
-              <div
-                class="h-9 w-9 rounded-xl bg-gradient-to-br from-aap-green via-aap-gold to-aap-blue grid place-items-center font-mono text-sm text-white"
-              >
-                AAP
-              </div>
-              <div class="font-semibold text-aap-ink">
-                PT Andalan Artha Primanusa
-              </div>
+              <div class="h-9 w-9 rounded-xl bg-aap-red grid place-items-center font-mono text-sm text-white">AAP</div>
+              <div class="font-semibold">PT Andalan Artha Primanusa</div>
             </div>
-            <p class="text-slate-600 text-sm mt-3">
-              Kontraktor tambang yang mengedepankan keselamatan, produktivitas,
-              dan kepatuhan.
-            </p>
+            <p class="text-slate-600 text-sm mt-3">Kontraktor tambang yang mengedepankan keselamatan, produktivitas, dan kepatuhan.</p>
           </div>
           <div>
-            <div class="font-semibold mb-3 text-aap-ink">Navigasi</div>
+            <div class="font-semibold mb-3">Navigasi</div>
             <ul class="space-y-2 text-slate-700 text-sm">
-              <li>
-                <a href="#layanan" class="hover:text-aap-green">Layanan</a>
-              </li>
-              <li>
-                <a href="#visi-misi" class="hover:text-aap-green"
-                  >Visi & Misi</a
-                >
-              </li>
-              <li>
-                <a href="#sejarah" class="hover:text-aap-green">Sejarah</a>
-              </li>
-              <li><a href="#galeri" class="hover:text-aap-green">Galeri</a></li>
-              <li><a href="#proyek" class="hover:text-aap-green">Proyek</a></li>
-              <li><a href="#kontak" class="hover:text-aap-green">Kontak</a></li>
+              <li><a href="#layanan" class="hover:text-aap-red">Layanan</a></li>
+              <li><a href="#visi-misi" class="hover:text-aap-red">Visi & Misi</a></li>
+              <li><a href="#sejarah" class="hover:text-aap-red">Sejarah</a></li>
+              <li><a href="#galeri" class="hover:text-aap-red">Galeri</a></li>
+              <li><a href="#proyek" class="hover:text-aap-red">Proyek</a></li>
+              <li><a href="#kontak" class="hover:text-aap-red">Kontak</a></li>
             </ul>
           </div>
           <div>
-            <div class="font-semibold mb-3 text-aap-ink">Legal</div>
+            <div class="font-semibold mb-3">Legal</div>
             <ul class="space-y-2 text-slate-700 text-sm">
               <li>NPWP • NIB • IUP OPK Jasa Pertambangan</li>
               <li>SMKP • K3LH • ISO roadmap</li>
             </ul>
           </div>
         </div>
-        <div
-          class="mt-8 pt-6 border-t border-slate-200 text-xs text-slate-600 flex flex-wrap justify-between gap-2"
-        >
-          <div>
-            © <span id="year"></span> PT Andalan Artha Primanusa. All rights
-            reserved.
-          </div>
+        <div class="mt-8 pt-6 border-t border-slate-200 text-xs text-slate-600 flex flex-wrap justify-between gap-2">
+          <div>© <span id="year"></span> PT Andalan Artha Primanusa. All rights reserved.</div>
           <div>Built with Departement HRGA.</div>
         </div>
       </div>
     </footer>
 
     <script>
-      // Dark mode toggle with localStorage
+      // Dark mode toggle (optional: attach to a button with id="modeToggle" if needed)
       const modeBtn = document.getElementById("modeToggle");
       const root = document.documentElement;
       const KEY = "aap:theme";
@@ -1082,33 +579,17 @@
       const carousel = document.getElementById("carousel");
       const slides = 3;
       let index = 0;
-      const update = () => {
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-      };
-      document.querySelector(".proj-next").addEventListener("click", () => {
-        index = (index + 1) % slides;
-        update();
-      });
-      document.querySelector(".proj-prev").addEventListener("click", () => {
-        index = (index - 1 + slides) % slides;
-        update();
-      });
+      const update = () => { carousel.style.transform = `translateX(-${index * 100}%)`; };
+      document.querySelector(".proj-next").addEventListener("click", () => { index = (index + 1) % slides; update(); });
+      document.querySelector(".proj-prev").addEventListener("click", () => { index = (index - 1 + slides) % slides; update(); });
 
       // Timeline slider
       const timeline = document.getElementById("timeline");
       const tlSlides = 4;
       let ti = 0;
-      const tlUpdate = () => {
-        timeline.style.transform = `translateX(-${ti * 100}%)`;
-      };
-      document.querySelector(".tl-next").addEventListener("click", () => {
-        ti = (ti + 1) % tlSlides;
-        tlUpdate();
-      });
-      document.querySelector(".tl-prev").addEventListener("click", () => {
-        ti = (ti - 1 + tlSlides) % tlSlides;
-        tlUpdate();
-      });
+      const tlUpdate = () => { timeline.style.transform = `translateX(-${ti * 100}%)`; };
+      document.querySelector(".tl-next").addEventListener("click", () => { ti = (ti + 1) % tlSlides; tlUpdate(); });
+      document.querySelector(".tl-prev").addEventListener("click", () => { ti = (ti - 1 + tlSlides) % tlSlides; tlUpdate(); });
 
       // Gallery filter + lightbox
       const galBtns = document.querySelectorAll(".gal-btn");
@@ -1116,13 +597,9 @@
       galBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
           const f = btn.dataset.filter;
-          galBtns.forEach((b) =>
-            b.classList.remove("bg-aap-green", "text-white")
-          );
-          btn.classList.add("bg-aap-green", "text-white");
-          items.forEach((it) => {
-            it.classList.toggle("hidden", f !== "all" && it.dataset.cat !== f);
-          });
+          galBtns.forEach((b) => b.classList.remove("bg-aap-red", "text-white"));
+          btn.classList.add("bg-aap-red", "text-white");
+          items.forEach((it) => { it.classList.toggle("hidden", f !== "all" && it.dataset.cat !== f); });
         });
       });
 
@@ -1139,28 +616,14 @@
         });
       });
       lbClose.addEventListener("click", () => lb.classList.remove("show"));
-      lb.addEventListener("click", (e) => {
-        if (e.target === lb) lb.classList.remove("show");
-      });
+      lb.addEventListener("click", (e) => { if (e.target === lb) lb.classList.remove("show"); });
 
       // Reveal on scroll
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((el) => {
-            if (el.isIntersecting) {
-              el.target.classList.add("opacity-100", "translate-y-0");
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((el) => { if (el.isIntersecting) { el.target.classList.add("opacity-100", "translate-y-0"); } });
+      }, { threshold: 0.12 });
       document.querySelectorAll("section, .card").forEach((el) => {
-        el.classList.add(
-          "opacity-0",
-          "translate-y-4",
-          "transition",
-          "duration-700"
-        );
+        el.classList.add("opacity-0", "translate-y-4", "transition", "duration-700");
         observer.observe(el);
       });
 
